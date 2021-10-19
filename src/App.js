@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, useRef } from "react";
+import PokeCard from "./components/PokeCard";
+import PokeList from "./components/PokeList";
 
-function App() {
+const App = (porps) => {
+  const [listData, setListData] = useState([]);
+  const [cardData, setCardData] = useState({});
+  const cardRef = useRef(null);
+  useEffect(() => {
+    const url = "https://pokeapi.co/api/v2/pokemon?limit=1138";
+    fetch(url)
+      .then((response) => response.json())
+      .then((json) => setListData(json.results));
+  }, []);
+
+  console.log("listData", listData);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Pokedex</h1>
+      <PokeList data={listData} />
+      <PokeCard data={cardData} ref={cardRef} />
+    </>
   );
-}
+};
 
 export default App;
