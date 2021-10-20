@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const PokeList = (props) => {
   const { data } = props;
