@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 const PokeList = (props) => {
-  const [searchValue, setSearchValue] = useState("");
+  const { data } = props;
   return (
     <div>
-      <input type="text" value={searchValue} />
+      <input type="text" />
       <li>
-        {props.data.map((d, i) => (
+        {data.map((d, i) => (
           <ul key={i}>{d.name.toUpperCase()}</ul>
         ))}
       </li>

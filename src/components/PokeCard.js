@@ -1,15 +1,16 @@
 import React from "react";
 
 const PokeCard = (props) => {
+  const { name, imageSrc, description } = props;
   return (
-    <div ref={props.cardRef}>
-      <h2>{props.name}</h2>
+    <div>
+      <h2>{name}</h2>
       <img
-        src={props.imageSrc}
-        alt={"Illustration of the Pokemon " + props.name}
-        title={props.name}
+        src={imageSrc}
+        alt={"Illustration of the Pokemon " + name}
+        title={name}
       />
-      <p>{props.description}</p>
+      <p>{description}</p>
     </div>
   );
 };
