@@ -5,11 +5,11 @@ const PokeList = (props) => {
   return (
     <div>
       <input type="text" />
-      <li>
+      <ul>
         {data.map((d, i) => (
-          <ul key={i}>{d.name.toUpperCase()}</ul>
+          <li key={i}>{d.name.toUpperCase()}</li>
         ))}
-      </li>
+      </ul>
     </div>
   );
 };
