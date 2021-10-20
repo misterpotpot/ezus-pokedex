@@ -15,7 +15,7 @@ const App = (props) => {
     <>
       <h1>Pokedex</h1>
       <PokeList data={listData} />
-      <PokeCard data={{}} />
+      <PokeCard name={""} imageSrc={""} description={""} />
     </>
   );
 };
